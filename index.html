@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>発達障害の正しい理解を広めるために | ニューロダイバーシティの視点から</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button.open + .accordion-content {
+            max-height: 500px; /* 十分な高さを確保 */
+        }
+        .hero-bg {
+            background-color: #F0F9FF; /* light blue */
+            background-image: radial-gradient(circle at top left, #DBEAFE, transparent 50%),
+                              radial-gradient(circle at bottom right, #D1FAE5, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-blue-600">知ろう、発達障害のこと</a>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">発達障害とは？</a>
+                    <a href="#history" class="text-gray-600 hover:text-blue-600 transition">誤解の歴史</a>
+                    <a href="#neurodiversity" class="text-gray-600 hover:text-blue-600 transition">新しい視点</a>
+                    <a href="#support" class="text-gray-600 hover:text-blue-600 transition">私たちができること</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">よくある質問</a>
+                </nav>
+                 <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">発達障害とは？</a>
+                <a href="#history" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">誤解の歴史</a>
+                <a href="#neurodiversity" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">新しい視点</a>
+                <a href="#support" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">私たちができること</a>
+                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">よくある質問</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero-bg py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    「ふつう」ってなんだろう？<br class="hidden md:block">
+                    <span class="text-blue-600">脳の多様性</span>を知る、はじめの一歩。
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                    発達障害は、特別なことではありません。それは、一人ひとりのユニークな脳の特性。
+                    「怠け」や「わがまま」といった誤解をなくし、科学に基づいた正しい理解を広げましょう。
+                </p>
+                <div class="mt-8">
+                    <a href="#about" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:-translate-y-1">
+                        もっと詳しく知る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要セクション -->
+        <div class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+                <!-- 1. 発達障害とは？ -->
+                <section id="about" class="scroll-mt-16">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900">発達障害とは？</h2>
+                            <p class="mt-4 text-lg text-gray-600">
+                                発達障害は、病気ではありません。生まれつきの脳機能の働き方の違いによるもので、その特性は一人ひとり異なります。決して「親の育て方」や「本人の努力不足」が原因ではありません。
+                            </p>
+                            <ul class="mt-6 space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>神経生物学的な起源:</strong> 脳の発達経路や機能的構造に根差した、生まれつきの状態です。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>スペクトラム（連続体）:</strong> 特性の現れ方には個人差があり、「ある/ない」の二元論ではなく、多様なグラデーションとして捉えられます。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>複雑な原因:</strong> 特定の遺伝子一つではなく、多くの遺伝的要因と、胎児期からの様々な環境要因が複雑に絡み合って影響すると考えられています。</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="brain.png" class="rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. 誤解の歴史 -->
+                <section id="history" class="scroll-mt-16">
+                     <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="flex justify-center md:order-2">
+                             <img src="History.png" class="rounded-lg shadow-xl">
+                        </div>
+                        <div class="md:order-1">
+                            <h2 class="text-3xl font-bold text-gray-900">痛ましい誤解の歴史</h2>
+                            <p class="mt-4 text-lg text-gray-600">
+                                私たちの理解は、常に正しかったわけではありません。科学的根拠のない理論が、多くの家族を苦しめた暗黒時代がありました。
+                            </p>
+                             <ul class="mt-6 space-y-4">
+                                <li class="flex items-start">
+                                    <svg class="flex-shrink-0 h-6 w-6 text-red-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>「冷蔵庫マザー」説:</strong> 20世紀半ば、「母親の愛情不足が自閉症の原因」という誤った心因論が広まり、母親たちが不当に非難されました。</span>
+                                </li>
+                                <li class="flex items-start">
+                                     <svg class="flex-shrink-0 h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>当事者運動の力:</strong> 親たちによる粘り強い運動が社会を動かし、日本でも2004年に「発達障害者支援法」が成立。支援体制の構築が進みました。</span>
+                                </li>
+                                <li class="flex items-start">
+                                     <svg class="flex-shrink-0 h-6 w-6 text-green-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span><strong>理解の進化:</strong> 科学の進歩と当事者の声により、理解は「非難」から「解明」へ、そして「権利とインクルージョン」の時代へと移行しています。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. 新しい視点：ニューロダイバーシティ -->
+                <section id="neurodiversity" class="scroll-mt-16">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold text-gray-900">新しい視点：<span class="text-blue-600">ニューロダイバーシティ</span></h2>
+                        <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                            発達障害を「欠陥」や「治すべきもの」と捉えるのではなく、人間の自然で価値ある「多様性」の一部として捉える考え方です。
+                        </p>
+                    </div>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8">
+                        <div class="bg-blue-50 p-8 rounded-lg">
+                            <div class="flex justify-center items-center bg-blue-100 rounded-full w-16 h-16 mx-auto">
+                                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-center">強みに基づく視点</h3>
+                            <p class="mt-2 text-gray-600 text-center">
+                                「過集中」や「独自の視点」など、特性が並外れた才能や強みになることがあります。歴史上の偉人にも、発達障害の特性を持つと推測される人物が数多くいます。
+                            </p>
+                        </div>
+                        <div class="bg-green-50 p-8 rounded-lg">
+                            <div class="flex justify-center items-center bg-green-100 rounded-full w-16 h-16 mx-auto">
+                                <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-center">社会モデル</h3>
+                            <p class="mt-2 text-gray-600 text-center">
+                                困難は本人の中にあるのではなく、多数派に合わせて作られた社会の側にある「障壁（バリア）」との間で生まれる、という考え方です。
+                            </p>
+                        </div>
+                        <div class="bg-yellow-50 p-8 rounded-lg">
+                            <div class="flex justify-center items-center bg-yellow-100 rounded-full w-16 h-16 mx-auto">
+                                <svg class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 019-9m-9 9h18"></path></svg>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-center">インクルーシブな未来</h3>
+                            <p class="mt-2 text-gray-600 text-center">
+                                脳の多様性を活かす職場や教育は、イノベーションを生み出し、組織全体を強くします。インクルージョンは「コスト」ではなく「投資」です。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. 私たちができること -->
+                <section id="support" class="scroll-mt-16">
+                     <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900">私たちができること</h2>
+                            <p class="mt-4 text-lg text-gray-600">
+                                特別な知識がなくても、一人ひとりの意識と行動が、誰もが生きやすい社会をつくります。
+                            </p>
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-gray-100 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg">合理的配慮を理解する</h4>
+                                    <p class="text-gray-600">個々の困難に応じた環境の調整は「優しさ」ではなく「権利」です。例えば、口頭だけでなく文章で指示を伝える、静かな環境を用意するなど、職場や学校でできることはたくさんあります。</p>
+                                </div>
+                                <div class="bg-gray-100 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg">「普通」を問い直す</h4>
+                                    <p class="text-gray-600">自分の「当たり前」が、他の人にとっては当たり前でないかもしれません。行動の背景にある困難を想像し、罰ではなく支援で応えることが大切です。</p>
+                                </div>
+                                 <div class="bg-gray-100 p-4 rounded-lg">
+                                    <h4 class="font-bold text-lg">正しい知識を学ぶ</h4>
+                                    <p class="text-gray-600">誤った情報や偏見に同調せず、信頼できる情報源から学び、周囲に伝えていくことが、社会全体の理解を深める力になります。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                             <img src="puzzle.png" class="rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- FAQセクション -->
+        <section id="faq" class="py-16 sm:py-24 bg-gray-50 scroll-mt-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">よくある質問 (Q&A)</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+                        発達障害に関するよくある疑問に、科学的根拠に基づいてお答えします。
+                    </p>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto space-y-4" id="faq-accordion">
+                    <!-- Q1 -->
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-lg hover:bg-gray-100 focus:outline-none">
+                            <span>Q1. 発達障害は「親の育て方」や「愛情不足」が原因ですか？</span>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-gray-600">
+                                <strong>A. いいえ、全く違います。</strong> 発達障害は、脳機能の発達に関わる生まれつきの特性です。かつて「冷蔵庫マザー」説のような誤った心因論が存在しましたが、現代の科学はこれを完全に否定しています。親の育て方が原因で発達障害になることはありません。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Q2 -->
+                     <div class="bg-white rounded-lg shadow-md">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-lg hover:bg-gray-100 focus:outline-none">
+                            <span>Q2. 発達障害は「甘え」や「わがまま」ではないのですか？</span>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-gray-600">
+                                <strong>A. 違います。</strong> 発達障害の特性として見られる行動（例：集中が続かない、こだわりが強い）は、本人の意図的な「わがまま」や「努力不足」ではありません。これらは、脳機能の違いから生じる、本人にとってもコントロールが難しいものです。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-lg hover:bg-gray-100 focus:outline-none">
+                            <span>Q3. 最近、発達障害の人が増えているのはなぜですか？</span>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-gray-600">
+                                <strong>A. 主に「認知度の向上」が理由です。</strong> 社会全体で発達障害への理解が広まり、これまで見過ごされてきた人々が診断・支援に繋がるようになったことが大きな要因です。「急に増えた」のではなく、これまで「見えなかった」人々が、正しく認識されるようになった側面が大きいと言えます。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="bg-white rounded-lg shadow-md">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 font-semibold text-lg hover:bg-gray-100 focus:outline-none">
+                            <span>Q4. 発達障害は治りますか？</span>
+                            <svg class="w-6 h-6 transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 pt-0 text-gray-600">
+                                <strong>A. 「治る」という概念は適切ではありません。</strong> 発達障害は病気ではなく、生まれつきの脳の特性です。しかし、療育や環境調整などによって、特性に伴う困難を和らげ、社会生活での適応能力を高めることは十分に可能です。支援の目標は、特性を「消す」ことではなく、本人がその特性を活かし、自分らしく幸福に生きていけるようにすることです。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2025 発達障害の正しい理解を広めるサイト. All Rights Reserved.</p>
+                <p class="mt-2 text-sm text-gray-400">このサイトは、提供された資料に基づき、情報提供を目的として作成されています。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニューのトグル
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                 // モバイルメニューが開いていれば閉じる
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // アコーディオン (FAQ)
+        const accordionContainer = document.getElementById('faq-accordion');
+        if (accordionContainer) {
+            accordionContainer.addEventListener('click', (e) => {
+                const button = e.target.closest('.accordion-button');
+                if (!button) return;
+
+                const currentlyOpenButton = accordionContainer.querySelector('.accordion-button.open');
+                if (currentlyOpenButton && currentlyOpenButton !== button) {
+                    currentlyOpenButton.classList.remove('open');
+                    currentlyOpenButton.querySelector('svg').style.transform = 'rotate(0deg)';
+                }
+
+                button.classList.toggle('open');
+                const icon = button.querySelector('svg');
+                if (button.classList.contains('open')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
